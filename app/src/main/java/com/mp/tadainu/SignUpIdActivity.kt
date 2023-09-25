@@ -2,12 +2,10 @@ package com.mp.tadainu
 
 import BaseActivity
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
-import android.view.MenuItem
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
@@ -22,14 +20,17 @@ import com.mp.tadainu.databinding.SignupIdBinding
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
 
 class SignUpIdActivity : BaseActivity() {
     private lateinit var binding: SignupIdBinding // View Binding object declaration
     private lateinit var buttonGoToNickName: Button // Define the button in class scope
+    private lateinit var buttonCheckId: Button
     private lateinit var editTextId: EditText // Define editTextId here
+    private lateinit var editTextPassword: EditText // Define the TextView
+    private lateinit var editTextPasswordCheck: EditText
     private lateinit var textViewCheckID: TextView // Define the TextView
+    private lateinit var textViewNotSamePassword: TextView
+
     //비미런호일치
     private lateinit var passwordTextWatcher: TextWatcher
     private var passwordsMatch = false
@@ -48,13 +49,13 @@ class SignUpIdActivity : BaseActivity() {
         supportActionBar?.title = "회원가입"
 
 
-        val buttonCheckId = findViewById<Button>(R.id.buttonCheckId)
-        buttonGoToNickName = findViewById<Button>(R.id.buttonGoToNickName) // Initialize the button
-        editTextId = findViewById<EditText>(R.id.editTextId) // Initialize the editTextId
-        textViewCheckID = findViewById<TextView>(R.id.textViewCheckID) // Initialize the TextView
-        val editTextPassword = binding.editTextPassword
-        val editTextPasswordConfirm = binding.editTextPasswordCheck
-        val textViewNotSamePassword = binding.textViewNotSamePassword
+        buttonCheckId = binding.buttonCheckId
+        buttonGoToNickName = binding.buttonGoToNickName
+        editTextId = binding.editTextId
+        textViewCheckID = binding.textViewCheckID // Initialize the TextView
+        editTextPassword = binding.editTextPassword
+        editTextPasswordCheck = binding.editTextPasswordCheck
+        textViewNotSamePassword = binding.textViewNotSamePassword
         buttonGoToNickName.visibility = View.INVISIBLE
         // Initially, make the TextView invisible
         textViewCheckID.visibility = View.INVISIBLE
@@ -67,7 +68,7 @@ class SignUpIdActivity : BaseActivity() {
         passwordTextWatcher = object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {
                 val password = editTextPassword.text.toString()
-                val passwordConfirm = editTextPasswordConfirm.text.toString()
+                val passwordConfirm = editTextPasswordCheck.text.toString()
 
                 // Check if passwords match
                 passwordsMatch = password == passwordConfirm
@@ -88,7 +89,7 @@ class SignUpIdActivity : BaseActivity() {
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
         }
         editTextPassword.addTextChangedListener(passwordTextWatcher)
-        editTextPasswordConfirm.addTextChangedListener(passwordTextWatcher)
+        editTextPasswordCheck.addTextChangedListener(passwordTextWatcher)
 
         binding.buttonGoToNickName.setOnClickListener {
             // Switch to signup_nickname activity
@@ -122,8 +123,6 @@ class SignUpIdActivity : BaseActivity() {
                 call: Call<ApiResponse>,
                 response: Response<ApiResponse>
             ) {
-                val checkIdResponse = response.body()
-                val status = checkIdResponse?.status
                 if (response.isSuccessful) {
                     // 서버 응답이 200일 때
                     textViewCheckID.visibility = View.VISIBLE // 보이기

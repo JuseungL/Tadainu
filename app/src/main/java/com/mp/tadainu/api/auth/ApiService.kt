@@ -1,7 +1,9 @@
 package com.mp.tadainu.api.auth
 
+import android.util.Log
 import com.mp.tadainu.api.auth.request.CheckIdRequest
 import com.mp.tadainu.api.auth.request.CheckNicknameRequest
+import com.mp.tadainu.api.auth.request.LoginRequest
 import com.mp.tadainu.api.auth.request.SaveUserInfoRequest
 import com.mp.tadainu.api.auth.response.ApiResponse
 import retrofit2.Call
@@ -18,6 +20,9 @@ interface ApiService {
 
     @POST("/auth/saveinfo") // Replace with the actual API endpoint
     fun saveUserInfo(@Body request: SaveUserInfoRequest): Call<ApiResponse> // ApiResponse is the response model from your server
+
+    @POST("/auth/signin")
+    fun signIn(@Body request: LoginRequest): Call<ApiResponse>
 
 }
 /***

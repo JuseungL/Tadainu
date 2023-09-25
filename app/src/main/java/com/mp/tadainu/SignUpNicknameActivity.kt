@@ -2,15 +2,14 @@ package com.mp.tadainu
 
 import BaseActivity
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.widget.Toolbar
-import com.mp.tadainu.Fragment_Home
-import com.mp.tadainu.R
 import com.mp.tadainu.api.RetrofitInstance
 import com.mp.tadainu.api.auth.ApiService
 import com.mp.tadainu.api.auth.request.CheckNicknameRequest
@@ -23,6 +22,12 @@ import retrofit2.Response
 
 class SignUpNicknameActivity : BaseActivity() {
     private lateinit var binding: SignupNicknameBinding // View Binding 객체 선언
+    private lateinit var toolbar: Toolbar
+    private lateinit var buttonCheckNickName: Button
+    private lateinit var editTextNickName: EditText
+    private lateinit var editTextPhoneNumber: EditText// Define editTextId here
+    private lateinit var editTextBirthdate: EditText
+    private lateinit var editTextName: EditText
     private lateinit var textViewCheckNickname: TextView // Initialize the TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,27 +39,30 @@ class SignUpNicknameActivity : BaseActivity() {
         setContentView(view)
 
         // Initialize toolbar
-        val toolbar = findViewById<Toolbar>(R.id.toolbarSignUpNickName)
+        toolbar = binding.toolbarSignUpNickName
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true) // Enable back button
         supportActionBar?.title = "회원가입" // Set the desired title
 
-        // TextView 초기화
+
         textViewCheckNickname = binding.textViewCheckNickname
         textViewCheckNickname.visibility = View.INVISIBLE // Set initial visibility
+        editTextName = binding.editTextName
+        editTextNickName = binding.editTextNickName
+        editTextPhoneNumber = binding.editTextPhoneNumber
+        editTextBirthdate = binding.editTextBirthdate
+        buttonCheckNickName = binding.buttonCheckNickName
+
 
         // 중복확인 버튼
-        val buttonCheckNickName = binding.buttonCheckNickName
-        val editTextNickName = binding.editTextNickName
+
         buttonCheckNickName.setOnClickListener {
             val userIdToCheck = editTextNickName.text.toString()
             checkNickname(userIdToCheck)
         }
 
         // 중복확인 후
-        val editTextPhoneNumber = binding.editTextPhoneNumber
-        val editTextBirthdate = binding.editTextBirthdate
-        val editTextName = binding.editTextName
+
         binding.buttonSignUpComplete.setOnClickListener {
             val receivedIntent = intent
             val usr_id = receivedIntent.getStringExtra("usr_id").toString()

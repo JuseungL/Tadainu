@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.content.Intent
 import com.mp.tadainu.databinding.ActivityMainBinding
-
+import com.mp.tadainu.ui.auth.LoginActivity
 
 
 class MainActivity : AppCompatActivity() {
@@ -20,6 +20,12 @@ class MainActivity : AppCompatActivity() {
 
         // Access your UI components through the binding object
         binding.buttonLoginMainLogin.setOnClickListener {
+            // Switch to signup_nickname activity
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.buttonLoginMainSignUp.setOnClickListener {
             // Switch to signup_nickname activity
             val intent = Intent(this, SignUpIdActivity::class.java)
             startActivity(intent)
