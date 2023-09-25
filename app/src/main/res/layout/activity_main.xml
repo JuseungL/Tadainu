@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFFFFF"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textViewLoginMainTadainuStart"
+        android:layout_width="229dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="134dp"
+        android:gravity="center_vertical"
+        android:lineSpacingExtra="36px"
+        android:text="다녀올개를\n시작해보세요!"
+        android:textSize="28sp" />
+
+    <TextView
+        android:id="@+id/textViewLoginMainMainContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:text="안심하고 출근하세요!"
+        android:textAlignment="center"
+        android:textSize="19sp" />
+
+    <ImageView
+        android:id="@+id/imageViewLoginMainLogo"
+        android:layout_width="500dp"
+        android:layout_height="300dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:src= "@drawable/tadainu_logo"/>
+
+    <Button
+        android:id="@+id/buttonLoginMainNotLogin"
+        android:layout_width="337dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#FFEAEAEA"
+        android:text="로그인 없이 앱 둘러보기"
+        android:textColor="#FF191919"
+        android:textSize="16sp"
+        app:cornerRadius="7dp" />
+
+    <ImageButton
+        android:id="@+id/buttonLoginMainLogin"
+        android:layout_width="337dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/tadainu_login"
+        app:cornerRadius="7dp"
+        android:contentDescription="Login with your ID" />
+
+
+
+    <Button
+        android:id="@+id/buttonLoginMainSignUp"
+        style="@style/Widget.Material3.Button.TextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="8dp"
+        android:text="회원가입 하기"
+        android:textSize="14sp"
+        android:textColor = "@color/rcolor" />
+
+</LinearLayout>

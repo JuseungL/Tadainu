@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".SignUpNicknameActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarSignUpNickName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/Theme.Tadainu.SignUp" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="26dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginRight="27dp"
+        android:text="닉네임을 입력해주세요"
+        android:textSize="20sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="26dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="27dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/editTextNickName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/text_background"
+            android:ems="10"
+            android:hint="닉네임 입력하기"
+            android:padding="10dp"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/buttonCheckNickName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:backgroundTint="#FF616161"
+            android:text="중복 확인"
+            android:textSize="18sp"
+            app:cornerRadius="7dp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textViewCheckNickname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="26dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="27dp"
+        android:text="사용할 수 있는 닉네임이에요."
+        android:textColor="#FF7D7D7D"
+        android:textSize="16sp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="이름"
+        android:textSize="20sp"
+        android:layout_gravity="start"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="27dp"/>
+
+    <EditText
+        android:id="@+id/editTextName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="26dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="27dp"
+        android:background="@drawable/text_background"
+        android:ems="10"
+        android:hint="이름 입력하기"
+        android:padding="10dp"
+        android:textSize="16sp" />
+
+    <!-- Gender Field -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="성별"
+        android:textSize="20sp"
+        android:layout_gravity="start"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="27dp"/>
+
+    <RadioGroup
+        android:id="@+id/gender"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="26dp"
+        android:orientation="horizontal">
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/man"
+            android:checked="true"
+            android:text="남성"
+            android:layout_marginEnd="40dp"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/woman"
+            android:text="여성"/>
+    </RadioGroup>
+
+    <!-- Phone Number Field -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="전화번호"
+        android:textSize="20sp"
+        android:layout_gravity="start"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="27dp"/>
+    <EditText
+        android:id="@+id/editTextPhoneNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="26dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="27dp"
+        android:background="@drawable/text_background"
+        android:ems="10"
+        android:hint="전화번호 입력하기"
+        android:inputType="phone"
+        android:padding="10dp"
+        android:textSize="16sp" />
+
+    <!-- Birthdate Field -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="생년월일"
+        android:textSize="20sp"
+        android:layout_gravity="start"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginEnd="27dp"/>
+    <EditText
+        android:id="@+id/editTextBirthdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="26dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="27dp"
+        android:background="@drawable/text_background"
+        android:ems="10"
+        android:hint="생년월일 입력하기 ex)20021008"
+        android:inputType="date"
+        android:padding="10dp"
+        android:textSize="16sp" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.widget.Button
+            android:id="@+id/buttonSignUpComplete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginBottom="20dp"
+            android:background="@color/rcolor"
+            android:text="회원가입 완료하기"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            app:cornerRadius="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarSignUpId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/Theme.Tadainu.SignUp" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="14dp"
+        android:layout_marginLeft="27dp"
+        android:layout_marginRight="26dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="27dp"
+        android:layout_marginRight="26dp"
+        android:text="아이디를 입력해주세요."
+        android:textSize="20sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="27dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="25dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/editTextId"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/text_background"
+            android:ems="10"
+            android:hint="아이디 입력하기"
+            android:padding="10dp"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/buttonCheckId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:backgroundTint="#FF616161"
+            android:text="중복 확인"
+            android:textSize="18sp"
+            app:cornerRadius="7dp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textViewCheckID"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:layout_marginLeft="27dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="26dp"
+        android:text="중복 확인을 해주세요."
+        android:textColor="#FF7D7D7D"
+        android:textSize="16sp" />
+
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="14dp"
+        android:layout_marginLeft="27dp"
+        android:layout_marginRight="26dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="27dp"
+        android:layout_marginRight="26dp"
+        android:text="비밀번호를 입력해주세요."
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/editTextPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="27dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="26dp"
+        android:background="@drawable/text_background"
+        android:ems="10"
+        android:hint="비밀번호 입력하기"
+        android:inputType="text|textPassword"
+        android:padding="10dp"
+        android:textSize="16sp" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="31dp"
+        android:layout_marginLeft="27dp"
+        android:layout_marginRight="26dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="27dp"
+        android:layout_marginRight="26dp"
+        android:text="비밀번호를 다시 확인할게요."
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/editTextPasswordCheck"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="27dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="26dp"
+        android:background="@drawable/text_background"
+        android:ems="10"
+        android:hint="비밀번호 확인하기"
+        android:inputType="text|textPassword"
+        android:padding="10dp"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/textViewNotSamePassword"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:layout_marginLeft="27dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="26dp"
+        android:text="비밀번호가 일치하지 않아요."
+        android:textColor="#FF7D7D7D"
+        android:textSize="16sp" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.widget.Button
+            android:id="@+id/buttonGoToNickName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="204dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginBottom="20dp"
+            android:text="다음으로 넘어가기"
+            android:textSize="24sp"
+            android:textColor="@color/white"
+            android:background="@color/rcolor"
+            app:cornerRadius="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
